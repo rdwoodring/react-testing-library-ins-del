@@ -2,12 +2,17 @@ import React from 'react'
 import {render, fireEvent} from '@testing-library/react'
 import Counter from '../'
 
-test('increments the count', () => {
-  const {getByText} = render(<Counter />)
-  const button = getByText('0')
-  fireEvent.click(button)
-  expect(button).toHaveTextContent('1')
-  fireEvent.click(button)
-  expect(button).toHaveTextContent('2')
+test('finds semantic insertions', () => {
+  const {getByRole} = render(<Counter />)
+  
+  expect(getByRole('insertion')).toBeTruthy();
+  
+})
+
+test('finds semantic deletions', () => {
+  const {getByRole} = render(<Counter />)
+  
+  expect(getByRole('deletion')).toBeTruthy();
+  
 })
 

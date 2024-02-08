@@ -1,9 +1,12 @@
 import React from 'react'
 
 function Counter() {
-  const [count, setCount] = React.useState(0)
-  const increment = () => setCount(c => c + 1)
-  return <button onClick={increment}>{count}</button>
+  return (
+    <>
+      <del>deleted</del>
+      <ins>inserted</ins>
+    </>
+  )
 }
 
 export default Counter
